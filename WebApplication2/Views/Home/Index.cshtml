@@ -1,0 +1,26 @@
+﻿@model WebApplication2.Models.Lessons[]
+@{
+
+    ViewBag.Title = "Lessons";
+    Layout = "~/Views/ViewPage1.cshtml";
+}
+@if (@Model.Length > 0)
+{
+    <table>
+        <thead><tr><th>№</th><th>Група</th><th>Всього студентів</th><th>Студенти що відвідують пари</th></tr></thead>
+        <tbody>
+
+            @foreach (WebApplication2.Models.Lessons l in Model)
+            {
+            <tr>
+                <td>@l.Lesson_Id</td>
+                <td>@l.Name_Group</td>
+                <td>@l.All_students</td>
+                <td>@l.Students_attended</td>
+            </tr>
+            }
+        </tbody>
+    </table> }
+else
+{
+    <h2>No lessons data</h2>}
